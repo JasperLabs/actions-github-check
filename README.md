@@ -29,3 +29,9 @@ jobs:
           name: 'deployed-to-production'
           token: ${{ github.token }}
 ```
+
+## Development
+
+After making an update, run `npm run build` to re-create the output file (which the action depends on).
+
+There is a pre-commit hook to do this automatically in case you forget.
