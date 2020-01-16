@@ -1,0 +1,19 @@
+name: 'GitHub commit status check'
+description: 'Set a status check on the commit this action is run for.'
+author: 'JasperLabs'
+inputs:
+  token:
+    description: 'Github repository token'
+    required: true
+  name:
+    description: 'Name of the status check'
+    required: true
+  status:
+    description: 'The current status. Can be one of queued, in_progress, or completed - see https://octokit.github.io/rest.js/#octokit-routes-checks'
+    default: 'completed'
+  conclusion:
+    description: 'Required if you provide completed_at or a status of completed. The final conclusion of the check. Can be one of success, failure, neutral, cancelled, timed_out, or action_required. - see https://octokit.github.io/rest.js/#octokit-routes-checks'
+    default: 'success'
+runs:
+  using: 'node12'
+  main: 'dist/index.js'
