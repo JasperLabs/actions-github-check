@@ -16,6 +16,12 @@
 	},
 	"devDependencies": {
 		"@zeit/ncc": "0.21.0",
+		"husky": "4.0.10",
 		"prettier": "1.19.1"
+	},
+	"husky": {
+		"hooks": {
+			"pre-commit": "npm run build:silent && git add dist/"
+		}
 	}
 }
