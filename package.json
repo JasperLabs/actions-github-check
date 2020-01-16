@@ -5,6 +5,8 @@
 	"license": "MIT",
 	"description": "Create GitHub commit status checks",
 	"scripts": {
+		"build": "ncc build index.js --out dist",
+		"build:silent": "npm run build -- --quiet --no-cache",
 		"format": "prettier --write \"**/*.{js,json}\"",
 		"test": "echo \"Error: no test specified\" && exit 1"
 	},
@@ -13,6 +15,7 @@
 		"@actions/github": "2.0.1"
 	},
 	"devDependencies": {
+		"@zeit/ncc": "0.21.0",
 		"prettier": "1.19.1"
 	}
 }
